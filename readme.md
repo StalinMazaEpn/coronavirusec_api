@@ -1,8 +1,8 @@
 # API Documentation Example
-This API uses `POST` request to communicate and HTTP [response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) to indenticate status and errors. All responses come in standard JSON. All requests must include a `content-type` of `application/json` and the body must be valid JSON.
+This API offers information about the status of the covid19 in Ecuador.
 
-## Response Codes 
-### Response Codes
+## Códigos de Respuesta
+### Códigos de Respuesta según statusCode
 ```
 200: Success
 400: Bad request
@@ -11,9 +11,6 @@ This API uses `POST` request to communicate and HTTP [response codes](https://en
 405: Method not allowed
 422: Unprocessable Entity 
 50X: Server Error
-```
-### Error Codes Details
-```
 100: Bad Request
 110: Unauthorized
 120: User Authenticaion Invalid
@@ -22,21 +19,12 @@ This API uses `POST` request to communicate and HTTP [response codes](https://en
 150: Conflict
 160: Server Error
 ```
-### Example Error Message
-```json
-http code 402
-{
-    "code": 120,
-    "message": "invalid crendetials",
-    "resolve": "The username or password is not correct."
-}
-```
 
-## Login
+<!-- ## Login
 **You send:**  Your  login credentials.
-**You get:** An `API-Token` with wich you can make further actions.
+**You get:** An `API-Token` with wich you can make further actions. -->
 
-**Request:**
+<!-- **Request:**
 ```json
 POST /login HTTP/1.1
 Accept: application/json
@@ -47,29 +35,16 @@ Content-Length: xy
     "username": "foo",
     "password": "1234567" 
 }
-```
-**Successful Response:**
-```json
-HTTP/1.1 200 OK
-Server: My RESTful API
-Content-Type: application/json
-Content-Length: xy
+-->
+# Rutas disponibles
+**Index** (/)
 
-{
-   "apitoken": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "expirationDate": "2018-02-13T15:31:55.559Z"
-}
-```
-**Failed Response:**
-```json
-HTTP/1.1 401 Unauthorized
-Server: My RESTful API
-Content-Type: application/json
-Content-Length: xy
+Retorna las estadisticas generales del covid 19 en Ecuador
 
-{
-    "code": 120,
-    "message": "invalid crendetials",
-    "resolve": "The username or password is not correct."
-}
-``` 
+**Provincias** (/provincias)
+
+Retorna las estadisticas por provincia sobre los casos de covid 19 en Ecuador
+
+## Autor
+
+> Stalin Maza

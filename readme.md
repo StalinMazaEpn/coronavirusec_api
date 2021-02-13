@@ -1,5 +1,5 @@
 # API Documentation Example
-This API offers information about the status of the covid19 in Ecuador.
+Api que ofrece información sobre la situacion del Covid19 en Ecuador
 
 ## Códigos de Respuesta
 ### Códigos de Respuesta según statusCode
@@ -19,23 +19,6 @@ This API offers information about the status of the covid19 in Ecuador.
 150: Conflict
 160: Server Error
 ```
-
-<!-- ## Login
-**You send:**  Your  login credentials.
-**You get:** An `API-Token` with wich you can make further actions. -->
-
-<!-- **Request:**
-```json
-POST /login HTTP/1.1
-Accept: application/json
-Content-Type: application/json
-Content-Length: xy
-
-{
-    "username": "foo",
-    "password": "1234567" 
-}
--->
 # Rutas disponibles
 **Index** (/)
 
@@ -44,6 +27,15 @@ Retorna las estadisticas generales del covid 19 en Ecuador
 **Provincias** (/provincias)
 
 Retorna las estadisticas por provincia sobre los casos de covid 19 en Ecuador
+
+## Deploy Vercel
+
+```bash
+npm install vercel -g
+$ cd <project-dir>
+$ npm install
+$ vercel
+```
 
 ## Autor
 

@@ -4,6 +4,10 @@ const { port } = require('./config');
 let routes = require('./routes');
 const cors = require('cors');
 
+app.get("/", function (req, res) {
+    res.json(`Main Server works correctly on domain: ${req.hostname}`)
+});
+
 app.use('/api', routes);
 //enable cors
 app.use(cors());

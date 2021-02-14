@@ -10,5 +10,5 @@ app.use(cors());
 app.options('*', cors());
 app.listen(port);
 
-console.log(`API is running on http://localhost:${port}`);
+console.log(`API INDEX is running on http://localhost:${port}`);
 module.exports = app;

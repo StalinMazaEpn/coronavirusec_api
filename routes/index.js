@@ -36,7 +36,7 @@ router.get('/', function (req, res) {
 });
 
 // Define the provincias api route
-router.get('/provincias', function (req, res) {
+router.get('/provinces', function (req, res) {
     let urlDatosProvinciales = 'https://www.coronavirusecuador.com/datos-provinciales/';
     request(urlDatosProvinciales, function (error, response, html) {
         if (!error) {

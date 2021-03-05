@@ -1,41 +1,32 @@
-# API Documentation Example
-Api que ofrece información sobre la situacion del Covid19 en Ecuador
+# CoronavirusEC API Documentation
+Api que ofrece información sobre la situación del Covid19 en Ecuador, con los datos generales y los datos de cada provincia
 
-## Códigos de Respuesta
-### Códigos de Respuesta según statusCode
-```
-200: Success
-400: Bad request
-401: Unauthorized
-404: Cannot be found
-405: Method not allowed
-422: Unprocessable Entity 
-50X: Server Error
-100: Bad Request
-110: Unauthorized
-120: User Authenticaion Invalid
-130: Parameter Error
-140: Item Missing
-150: Conflict
-160: Server Error
-```
-# Rutas disponibles
-**Index** (/)
+## Tecnologías Utilizadas
+- NodeJS como lenguaje de programación
+- Express como framework servidor
+- Cheerio como herramienta para manipular los datos obtenidos por el scrapper
+- Request como herramienta para obtener los datos de las páginas web utilizadas
+- CORS como paquete necesario para permitir que los servicios externos puedan realizar peticiones hacia los endpoints habilitados
 
-Retorna las estadisticas generales del covid 19 en Ecuador
+## Actividades
 
-**Provincias** (/provincias)
+**#1)** Leer los datos de la página oficial sobre el coronavirus en ecuador, datos generales y datos por provincia.
 
-Retorna las estadisticas por provincia sobre los casos de covid 19 en Ecuador
+**#2)** Organizar los datos en un formato ideal para ser interpretado usando **JSON**.
 
-## Deploy Vercel
+**#3)** Construir 2 endpoints para poder retornar los datos generales y los datos por provincia previamente obtenidos.
 
-```bash
-npm install vercel -g
-$ cd <project-dir>
-$ npm install
-$ vercel
-```
+**#4)** Agregar una configuración para permitir el acceso público del API habilitando los **CORS** a dichos endpoints.
+
+## Rutas disponibles
+**Estadisticas Generales** (/) (GET)
+
+Este endpoint retorna el número de pacientes con covid19 que han sido confirmados, dados de alta, fallecidos, recuperados y descartados totalizados por todo el país.
+
+
+**Estadisticas Provinciales** (/provincias) (GET)
+
+Este endpoint retorna el número de pacientes con covid19 que han sido confirmados, que han fallecido y que probablemente fallecieron totalizados por cada provincia.
 
 ## Autor
 

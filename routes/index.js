@@ -30,13 +30,15 @@ router.get('/', function (req, res) {
         }
         let $ = cheerio.load(html);
         const data = [];
-        $(".wpb_wrapper").each(function () {
-            const caption_label = $(this).find('.vcex-milestone-caption').text();
+        $(".vc_general.vc_parallax.wpb_column .wpb_wrapper").each(function () {
+            const caption_label = $(this).find('.vcex-milestone-caption').text()?.replace(/\s+/g, ' ')?.trim();
             const caption_value = $(this).find('.vcex-milestone-number').text();
             const caption_data_value = $(this).find('.vcex-milestone-time').data('options');
             const value = (caption_data_value && caption_data_value.endVal) ? caption_data_value.endVal : caption_value;
-            if (caption_label && caption_label != "") {
-                const label = replaceAll(caption_label.toLowerCase(), " ", "_");
+            
+            if (caption_label && caption_label != "" && value != "") {
+                let label = caption_label.replace(/[\r\n]/g, '')?.trim()
+                label = replaceAll(label.toLowerCase(), " ", "_");
                 const obj = {};
                 obj[label] = value;
                 data.push(obj);
